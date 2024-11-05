@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mental Health Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Analyze Mental Health</h1>
+    <form action="/analyze" method="post">
+        <label for="profile_url">Instagram Profile URL:</label>
+        <input type="text" name="profile_url" required>
+        <label for="post_count">Number of Posts:</label>
+        <select name="post_count">
+            <option value="5">5</option>
+            <option value="7">7</option>
+            <option value="15">15</option>
+            <option value="30">1 Month</option>
+            <option value="90">3 Months</option>
+        </select>
+        <button type="submit">Analyze</button>
+    </form>
+</body>
+</html>
