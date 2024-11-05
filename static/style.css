@@ -1,7 +1,65 @@
+/* General body styling to cover the full screen */
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-h1 {
-    color: #333;
+
+/* Top bar styling */
+.top-bar {
+    width: 100%;
+    background-color: #36a2eb;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.logo {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+}
+
+.subtitle {
+    font-size: 12px;
+    font-weight: normal;
+    display: block;
+}
+
+/* Styling for the main content */
+.container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 20px;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+.chart-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.chart-container {
+    width: 45%;
+}
+
+/* Add hover effect to the submit button */
+input[type="submit"]:hover {
+    background-color: #3394d3;
 }

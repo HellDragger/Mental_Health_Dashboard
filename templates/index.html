@@ -2,23 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mental Health Dashboard</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Emotional Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Analyze Mental Health</h1>
-    <form action="/analyze" method="post">
-        <label for="profile_url">Instagram Profile URL:</label>
-        <input type="text" name="profile_url" required>
-        <label for="post_count">Number of Posts:</label>
-        <select name="post_count">
-            <option value="5">5</option>
-            <option value="7">7</option>
-            <option value="15">15</option>
-            <option value="30">1 Month</option>
-            <option value="90">3 Months</option>
-        </select>
-        <button type="submit">Analyze</button>
-    </form>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <a href="/" class="logo">
+            SMED
+            <span class="subtitle">Social Media Emotional Dashboard</span>
+        </a>
+    </div>
+
+    <div class="container">
+        <h1>Welcome to SMED</h1>
+        <h2>Analyze Emotional Content from Instagram Posts</h2>
+
+        <form action="/" method="POST">
+            <label for="insta_url">Instagram Profile URL:</label>
+            <input type="text" id="insta_url" name="insta_url" placeholder="Enter Instagram profile URL" required>
+
+            <label for="post_count">Number of Posts to Analyze:</label>
+            <select id="post_count" name="post_count" required>
+                <option value="5">5</option>
+                <option value="7">7</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+            </select>
+
+            <input type="submit" value="Analyze">
+        </form>
+    </div>
 </body>
 </html>
