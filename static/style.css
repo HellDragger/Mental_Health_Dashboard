@@ -4,23 +4,19 @@ body {
     background-color: #f4f4f9;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
 }
 
 /* Top bar styling */
 .top-bar {
-    width: 100%;
-    background-color: #36a2eb;
-    padding: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
 }
 
 .logo {
-    color: white;
     font-size: 28px;
     font-weight: bold;
     text-decoration: none;
@@ -28,9 +24,8 @@ body {
 }
 
 .subtitle {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: normal;
-    display: block;
 }
 
 /* Styling for the main content */
@@ -39,15 +34,21 @@ body {
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 1200px;
-    margin-top: 20px;
+    max-width: 900px;
+    margin-top: 30px;
+    width: 100%;
 }
 
 h1, h2 {
     margin-bottom: 20px;
 }
 
+/* Add hover effect to the submit button */
+input[type="submit"]:hover {
+    background-color: #3394d3;
+}
+
+/* Chart wrapper to center and arrange charts */
 .chart-wrapper {
     display: flex;
     justify-content: space-around;
@@ -57,9 +58,4 @@ h1, h2 {
 
 .chart-container {
     width: 45%;
-}
-
-/* Add hover effect to the submit button */
-input[type="submit"]:hover {
-    background-color: #3394d3;
 }

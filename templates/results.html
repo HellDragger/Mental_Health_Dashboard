@@ -23,9 +23,9 @@
         <h2>Emotion Scores (Averaged Across Posts)</h2>
 
         <div class="chart-wrapper">
-            <!-- Pie Chart -->
+            <!-- Line Chart (replacing Pie Chart) -->
             <div class="chart-container">
-                <canvas id="pieChart"></canvas>
+                <canvas id="lineChart"></canvas>
             </div>
 
             <!-- Bar Chart -->
@@ -36,15 +36,18 @@
 
         <script>
             // Data passed from the Flask app
-            const scores = {{ scores | safe }};
+            var scores = {{ scores | safe }};
 
-            // Data for Pie Chart
-            const pieData = {
+            // Data for Line Chart
+            const lineData = {
                 labels: ['Depression', 'Anxiety', 'Anger', 'Normal'],
                 datasets: [{
+                    label: 'Emotion Scores (%)',
                     data: [scores.depression, scores.anxiety, scores.anger, scores.normal],
-                    backgroundColor: ['#ff6384', '#36a2eb', '#ff9f40', '#4bc0c0'],
-                    hoverOffset: 4
+                    borderColor: '#36a2eb',
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    fill: true,
+                    tension: 0.4
                 }]
             };
 
@@ -60,16 +63,26 @@
                 }]
             };
 
-            // Config for Pie Chart
-            const pieConfig = {
-                type: 'pie',
-                data: pieData,
+            // Config for Line Chart
+            const lineConfig = {
+                type: 'line',
+                data: lineData,
                 options: {
                     responsive: true,
                     plugins: {
                         legend: {
                             position: 'top',
                         },
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            title: {
+                                display: true,
+                                text: 'Scores (%)'
+                            }
+                        }
                     }
                 }
             };
@@ -97,10 +110,10 @@
                 }
             };
 
-            // Render the Pie Chart
-            const pieChart = new Chart(
-                document.getElementById('pieChart'),
-                pieConfig
+            // Render the Line Chart
+            const lineChart = new Chart(
+                document.getElementById('lineChart'),
+                lineConfig
             );
 
             // Render the Bar Chart
